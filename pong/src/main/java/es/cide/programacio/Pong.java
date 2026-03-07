@@ -10,27 +10,33 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.util.Random;
-import javax.imageio.ImageIO;
 
 import java.io.IOException;
 import java.net.URL;
 
-public class CercleRebotant extends JPanel implements ActionListener {
+public class Pong extends JPanel implements ActionListener {
 
+    // 1. Declaramos un arreglo lo suficientemente grande para los códigos de teclas
+    // 256 suele bastar, pero 1024 cubre prácticamente cualquier teclado especial
+    private final boolean[] keys = new boolean[1024];
     // Variables de movimiento y posición
     private double dxPilota = 6, dyPilota = 6;
+    private final int RADI = 20;
+    private int xPilota = 500, yPilota = 500;
+
+    // posicion rectangulos
     private double xRectangle11 = 100, yRectangle11 = 100;
     private double xRectangle12 = 400, yRectangle12 = 100;
     private double xRectangle21 = 1150, yRectangle21 = 50;
     private double xRectangle22 = 850, yRectangle22 = 50;
-
     private double xRectangleSize = 50, yRectangleSize = 180;
-    private final int RADI = 20;
-    private final int DELAY = 10;
-    private final static int HEIGHT = 1080;
-    private final static int WIDTH = 1920;
+    private double rectangleVel = 15.0;
 
-    private int xPilota = 500, yPilota = 500;
+    private Image imagenJ1;
+    private Image imagenJ2;
+
+    private final int DELAY = 10;
+
     private Timer timer;
     private Image imagenPelota;
 
@@ -41,23 +47,18 @@ public class CercleRebotant extends JPanel implements ActionListener {
     // Variables para mostrar posición del ratón
     private int mouseX, mouseY;
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Cercle Rebotant");
-            CercleRebotant panel = new CercleRebotant();
+    Rectangle r1 = new Rectangle(xRectangle11, yRectangle11, xRectangleSize, yRectangleSize, rectangleVel,
+            rectangleVel);
+    Rectangle r2 = new Rectangle(xRectangle12, yRectangle12, xRectangleSize, yRectangleSize, rectangleVel,
+            rectangleVel);
+    Rectangle r3 = new Rectangle(xRectangle22, yRectangle22, xRectangleSize, yRectangleSize, rectangleVel,
+            rectangleVel);
+    Rectangle r4 = new Rectangle(xRectangle21, yRectangle21, xRectangleSize, yRectangleSize, rectangleVel,
+            rectangleVel);
 
-            frame.add(panel);
-            frame.setSize(WIDTH, HEIGHT);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
-    }
+    Cercle c1 = new Cercle(xPilota, yPilota, dxPilota, dyPilota, RADI);
 
-    private Image imagenJ1;
-    private Image imagenJ2;
-
-    public CercleRebotant() {
+    public Pong() {
         // 1. Intentamos cargar la imagen dentro de un bloque try
         try {
             URL urlJ1 = getClass().getResource("/a1.png");
@@ -101,60 +102,20 @@ public class CercleRebotant extends JPanel implements ActionListener {
 
     @Override
     protected void paintComponent(Graphics g) {
+
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        dibujarCampo(g2d);
+        drawCampo(g2d);
 
-        // Suavizado de dibujo
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        drawCercle(g2d);
 
-        // Dibujar Pelota (Imagen o círculo rojo si falla la carga)
-        if (imagenPelota != null) {
-            g2d.drawImage(imagenPelota, xPilota, yPilota, RADI * 2, RADI * 2, this);
-        } else {
-            g2d.setColor(Color.RED);
-            g2d.fillOval(xPilota, yPilota, RADI * 2, RADI * 2);
-        }
+        drawRectangle(g2d, r1, imagenJ1);
+        drawRectangle(g2d, r2, imagenJ1);
+        drawRectangle(g2d, r3, imagenJ2);
+        drawRectangle(g2d, r4, imagenJ2);
 
-        // Rectángulos grupo 1 (Verdes)
-        g2d.setColor(Color.GREEN);
-        g2d.fillRect((int) xRectangle11, (int) yRectangle11, (int) xRectangleSize, (int) yRectangleSize);
-
-        // Dibujamos la imagen ENCIMA. Al usar xRectangleSize e yRectangleSize, se
-        // escala sola.
-        if (imagenJ1 != null) {
-            g2d.drawImage(imagenJ1, (int) xRectangle11, (int) yRectangle11, (int) xRectangleSize, (int) yRectangleSize,
-                    this);
-        }
-
-        // Repetir para los demás...
-        g2d.setColor(Color.decode("#00008b"));
-        g2d.fillRect((int) xRectangle12, (int) yRectangle12, (int) xRectangleSize, (int) yRectangleSize);
-        if (imagenJ2 != null) {
-            g2d.drawImage(imagenJ2, (int) xRectangle12, (int) yRectangle12, (int) xRectangleSize, (int) yRectangleSize,
-                    this);
-        }
-
-        // --- RECTÁNGULOS GRUPO 2 (Ejemplo: Jugador 2) ---
-
-        g2d.setColor(Color.BLUE);
-        g2d.fillRect((int) xRectangle21, (int) yRectangle21, (int) xRectangleSize,
-                (int) yRectangleSize);
-        if (imagenJ2 != null) {
-            g2d.drawImage(imagenJ2, (int) xRectangle21, (int) yRectangle21, (int) xRectangleSize, (int) yRectangleSize,
-                    this);
-        }
-
-        g2d.setColor(Color.decode("#006400"));
-        g2d.fillRect((int) xRectangle22, (int) yRectangle22, (int) xRectangleSize,
-                (int) yRectangleSize);
-        if (imagenJ1 != null) {
-            g2d.drawImage(imagenJ1, (int) xRectangle22, (int) yRectangle22, (int) xRectangleSize, (int) yRectangleSize,
-                    this);
-        }
-
-        // UI: Puntuación y Coordenadas Ratón
+        // ----- CONTADOR -----
         g2d.setColor(Color.WHITE);
         g2d.setFont(new Font("Arial", Font.BOLD, 20));
         g2d.drawString("Punts J1: " + puntuacion1, 50, 50);
@@ -163,7 +124,27 @@ public class CercleRebotant extends JPanel implements ActionListener {
 
     }
 
-    private void dibujarCampo(Graphics2D g2d) {
+    private void drawRectangle(Graphics2D g2d, Rectangle r, Image img) {
+        g2d.setColor(Color.GREEN);
+        g2d.fillRect((int) r.getPosX(), (int) r.getPosY(), (int) r.getSizeX(), (int) r.getSizeY());
+
+        if (img != null) {
+            g2d.drawImage(img, (int) r.getPosX(), (int) r.getPosY(), (int) r.getSizeX(), (int) r.getSizeY(),
+                    this);
+        }
+    }
+
+    private void drawCercle(Graphics2D g2d) {
+
+        if (imagenPelota != null) {
+            g2d.drawImage(imagenPelota, xPilota, yPilota, RADI * 2, RADI * 2, this);
+        } else {
+            g2d.setColor(Color.RED);
+            g2d.fillOval(xPilota, yPilota, RADI * 2, RADI * 2);
+        }
+    }
+
+    private void drawCampo(Graphics2D g2d) {
         // 1. Fondo del césped
         g2d.setColor(new Color(34, 139, 34)); // Verde bosque
         g2d.fillRect(0, 0, getWidth(), getHeight());
@@ -173,7 +154,6 @@ public class CercleRebotant extends JPanel implements ActionListener {
         g2d.setStroke(new BasicStroke(3)); // Líneas un poco más gruesas
 
         // --- Líneas Perimetrales ---
-        // Dejamos un pequeño margen de 20px para que no peguen al borde
         int margen = 20;
         int campoW = getWidth() - (margen * 2);
         int campoH = getHeight() - (margen * 2);
@@ -187,10 +167,10 @@ public class CercleRebotant extends JPanel implements ActionListener {
         int radioCirculo = 100;
         g2d.drawOval(mitadX - radioCirculo, (getHeight() / 2) - radioCirculo, radioCirculo * 2, radioCirculo * 2);
 
-        // Punto central (opcional)
+        // Punto central
         g2d.fillOval(mitadX - 5, (getHeight() / 2) - 5, 10, 10);
 
-        // --- Áreas de Portería (Opcional pero recomendado) ---
+        // --- Áreas de Portería---
         int anchoArea = 150;
         int altoArea = 400;
 
@@ -241,69 +221,6 @@ public class CercleRebotant extends JPanel implements ActionListener {
         }
     }
 
-    // 1. Declaramos un arreglo lo suficientemente grande para los códigos de teclas
-    // 256 suele bastar, pero 1024 cubre prácticamente cualquier teclado especial
-    private final boolean[] keys = new boolean[1024];
-
-    /*
-     * private void addKeyboard() {
-     * 
-     * KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(
-     * new KeyEventDispatcher() {
-     * 
-     * @Override
-     * 
-     * public boolean dispatchKeyEvent(KeyEvent e) {
-     * 
-     * if (e.getID() == KeyEvent.KEY_PRESSED) {
-     * 
-     * int c = e.getKeyCode();
-     * 
-     * double vel = 15.0;
-     * 
-     * switch (c) {
-     * 
-     * case KeyEvent.VK_W:
-     * 
-     * yRectangle11 -= vel;
-     * 
-     * yRectangle22 -= vel;
-     * 
-     * break;
-     * 
-     * case KeyEvent.VK_S:
-     * 
-     * yRectangle11 += vel;
-     * 
-     * yRectangle22 += vel;
-     * 
-     * break;
-     * 
-     * case KeyEvent.VK_UP:
-     * 
-     * yRectangle21 -= vel;
-     * 
-     * yRectangle12 -= vel;
-     * 
-     * break;
-     * 
-     * case KeyEvent.VK_DOWN:
-     * 
-     * yRectangle21 += vel;
-     * 
-     * yRectangle12 += vel;
-     * 
-     * break;
-     * 
-     * 
-     * 
-     * }
-     * 
-     * }
-     * 
-     * return false;
-     */
-
     private void addKeyboard() {
         KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatcher() {
             @Override
@@ -328,26 +245,22 @@ public class CercleRebotant extends JPanel implements ActionListener {
     }
 
     private void updateMovement() {
-        double vel = 15.0;
 
-        // Jugador 1 (WASD)
         if (keys[KeyEvent.VK_W]) {
-            yRectangle11 -= vel;
-            yRectangle22 -= vel;
+            r1.setPosY(r1.getPosY() - r1.getVelY());
+            r2.setPosY(r2.getPosY() - r2.getVelY());
         }
         if (keys[KeyEvent.VK_S]) {
-            yRectangle11 += vel;
-            yRectangle22 += vel;
+            r1.setPosY(r1.getPosY() + r1.getVelY());
+            r2.setPosY(r2.getPosY() + r2.getVelY());
         }
-
-        // Jugador 2 (Flechas)
         if (keys[KeyEvent.VK_UP]) {
-            yRectangle21 -= vel;
-            yRectangle12 -= vel;
+            r3.setPosY(r3.getPosY() - r3.getVelY());
+            r4.setPosY(r4.getPosY() - r4.getVelY());
         }
         if (keys[KeyEvent.VK_DOWN]) {
-            yRectangle21 += vel;
-            yRectangle12 += vel;
+            r3.setPosY(r3.getPosY() + r3.getVelY());
+            r4.setPosY(r4.getPosY() + r4.getVelY());
         }
 
         repaint();
@@ -359,6 +272,11 @@ public class CercleRebotant extends JPanel implements ActionListener {
         else
             puntuacion2++;
 
+        resetCerclePos();
+
+    }
+
+    private void resetCerclePos() {
         // Reset posición
         xPilota = getWidth() / 2;
         yPilota = getHeight() / 2;

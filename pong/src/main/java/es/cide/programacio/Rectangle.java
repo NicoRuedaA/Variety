@@ -68,4 +68,20 @@ public class Rectangle {
         return this.yPos;
     }
 
+    double getSizeX() {
+        return this.xSize;
+    }
+
+    double getSizeY() {
+        return this.ySize;
+    }
+
+    double getVelX() {
+        return this.xVel;
+    }
+
+    double getVelY() {
+        return this.yVel;
+    }
+
 }
