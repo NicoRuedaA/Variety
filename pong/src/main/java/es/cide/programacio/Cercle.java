@@ -1,8 +1,10 @@
 package es.cide.programacio;
 
 public class Cercle implements Collider {
+    // ------Constantes------
     private static final double ACEL = 1.05;
 
+    // ------Variables------
     private double initialXvel;
     private double initialYvel;
 
@@ -14,11 +16,7 @@ public class Cercle implements Collider {
 
     private double radi;
 
-    @Override
-    public String getShapeType() {
-        return "cercle";
-    }
-
+    // ------Constructor------
     public Cercle() {
 
     }
@@ -34,6 +32,12 @@ public class Cercle implements Collider {
         this.initialYvel = yVel;
     }
 
+    // ------Metodos públicos------
+    public String getType() {
+        // metodo que devuelve que tipo de geometria es
+        return "cercle";
+    }
+
     public void accelerate() {
         setXvel(getVelX() * ACEL);
         setYvel(yVel * ACEL);
@@ -44,6 +48,7 @@ public class Cercle implements Collider {
 
     }
 
+    // ------Setters------
     public void setXpos(double newXpos) {
         this.xPos = newXpos;
     }
@@ -82,6 +87,7 @@ public class Cercle implements Collider {
         setYvel(newYvel);
     }
 
+    // ------Getters------
     public double getRadi() {
         return this.radi;
     }

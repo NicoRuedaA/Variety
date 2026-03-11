@@ -2,33 +2,15 @@ package es.cide.programacio;
 
 public class Rectangle implements Collider {
 
-    // crear velocidad por defecto
-    // poner velocidad por defecto en el constructor sin velocidad
-    double xPos;
-    double yPos;
-    double xSize;
-    double ySize;
-    double xVel;
-    double yVel;
+    // -----Variables------
+    private double xPos;
+    private double yPos;
+    private double xSize;
+    private double ySize;
+    private double xVel;
+    private double yVel;
 
-    @Override
-    public String getShapeType() {
-        return "rectangle";
-    }
-
-    public Rectangle() {
-
-    }
-
-    public Rectangle(double initialPosX, double initialPosY, double initialSizeX, double initialSizeY) {
-        this.xPos = initialPosX;
-        this.yPos = initialPosY;
-        this.xSize = initialSizeX;
-        this.ySize = initialSizeY;
-        // falta xvel
-        // falta yvel
-    }
-
+    // -----Constructor------
     public Rectangle(double initialPosX, double initialPosY, double initialSizeX, double initialSizeY,
             double initialXvel, double initialYvel) {
         this.xPos = initialPosX;
@@ -39,6 +21,18 @@ public class Rectangle implements Collider {
         this.yVel = initialYvel;
     }
 
+    public Rectangle() {
+
+    }
+
+    // -----Metodos publicos-----
+    @Override
+    public String getType() {
+        // metodo para devolver que tipo de objeto es (lo usaremos en la colision)
+        return "rectangle";
+    }
+
+    // -----Setters------
     public void setPosX(double newX) {
         this.xPos = newX;
     }
@@ -65,6 +59,7 @@ public class Rectangle implements Collider {
         setYvel(newYvel);
     }
 
+    // -----Getters------
     public double getPosX() {
         return this.xPos;
     }
