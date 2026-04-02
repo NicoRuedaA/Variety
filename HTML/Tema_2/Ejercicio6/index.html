@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Ejercicio 6</title>
+<style>
+form label { display: block;}
+form input,
+form button { display: block; width: 100%; max-width: 300px;}
+</style></head>
+
+<body>
+<header>Ejercicio 6</header>
+
+
+
+
+<main>
+<form action="paginas2.html" method="post" >
+
+<fieldset>
+<legend>Client particular</legend>
+<label>Nom:
+<input type="text" id="name" name="name" placeholder="Nombre" required>
+</label>
+<label>Edat:
+<input type="number" id="age" name="age" placeholder="Edat" required min="18" min="99" required>
+</label>
+<label>Correu electrònic:
+<input type="email" id="email" name="email" placeholder="Correu electrònic" required>
+</label>
+<label>Contrasenya:
+<input type="password" id="contrasenya" name="contrasenya" placeholder="Contrasenya" required minlength="6" maxlength="12">
+</label>
+<label>Suscribirse:
+<input type="checkbox" id="checkbox" name="checkbox" placeholder="checkbox" >
+</label>
+</fieldset>
+
+
+<label for="consoles">Consoles
+<select name="consoles" multiple size="9"  id="consoles">
+    <optgroup label="Consoles de casa">
+<option>PS5</option>
+<option>PS4</option>
+<option>Xbox Series X</option>
+<option>Xbox Series S</option>
+<option>Xbox One</option>
+</optgroup>
+    <optgroup label="Consoles portables">
+<option>Nintendo Switch </option>
+<option>Nintendo Switch Lite </option>
+<option>Nintendo Switch 2</option>
+<option>Nintendo 3DS</option>
+<option>Steam Deck</option>
+</optgroup>
+</select>
+</label>
+
+<fieldset>
+<label>
+<input type="radio" id="idomaCatala" name="idioma" value="catala" required>
+Català
+</label>
+
+<label>
+<input type="radio" id="idiomaCastella" name="idioma" value="castella" required>
+Castellà
+</label>
+
+<label>
+<input type="radio" id="idiomaInglés" name="idioma" value="inglés" required>
+Anglès
+</label>
+</fieldset>
+
+
+
+<label>
+<fieldset>Comentaris:
+<textarea id="comentaris" name="comentaris" cols="50" rows="7" placeholder="Espai per comentaris.">
+</textarea>
+</label>
+</fieldset>
+
+<button type="submit" id="buttonEnviar" name="buttonEnviar" value="buttonEnviar" >Enviar</button>
+</form>
+</main>
+</body>
+
+</html>

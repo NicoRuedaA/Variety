@@ -1,0 +1,17 @@
+.cercle {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-timing-function: linear;
+  transition-delay: 0.5s;
+}
+
+.cercle:hover {
+  scale: 1.5;
+  background-color: rgb(49, 163, 129);
+  box-shadow: 0 0 10px rebeccapurple;
+}

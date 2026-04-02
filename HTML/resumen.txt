@@ -1,0 +1,162 @@
+
+
+h1 h2... etiquets de encabezamiento
+<p> parágrafo
+<b> negrita. No usar. Usar <strong>
+<em> letra italic
+
+ul / ol 
+li
+
+Class - agrupar elementos. Java Script
+Hidden - no tiene valor
+Id- identifica el elemento de maner único en el documento
+Title - especificar información extra
+
+<a href="https....es"> Texto </a>
+
+<a href="#seccion1"> Texto </a> //vuelve a la sección 1
+
+<a href="mailto:correo@correo"> texto </a>
+<a href="tel: 999 999..."> texto </a>
+
+<img src="img/exemple.png">
+
+<!--i--> comentario en HTML -->
+
+espacio - &nbsp
+@ - &copy
+
+
+	Estructura esencial
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+	</body>
+</html>
+
+<base target="_blank"> todos los enlaces se abren en una pestaña nueva //solo puede haber una
+
+
+Estructura extra
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Texto descriptivo">
+		<meta name="author" content="Nico Rueda">
+		<meta name="theme-color" content="#ee0">
+		<link rel="icon" href="enlace_de_la_imagen" type="image/x-icon" />
+		<title>titulo</title>
+	</head>
+	<body>
+		<header> 
+			<h1> titulo de la pagina </h1>
+		</header>
+		<main> 
+			<aside></aside>
+			<section>
+				<article>
+				</article>
+				<article>
+				</article>
+			</section>
+		</main>
+		<footer>
+		</footer>
+	</body>
+	
+</html>
+
+desplegable
+<details open>
+
+enlaces de navegación 
+<nav> </nav>
+<details> 
+
+		FORMULARIO
+Action - url de destino
+Method - método de envió. Post o get.
+	get visible en la barra de navegadores
+	post no visible en la barra
+target: donde mostrar el contenido devuelto
+autocomplete : autocompeltar con valores de otras sesiones. on/off
+<input type=: submit" valure="botón submit">
+
+disabled - desactiva el componente
+name - nombre del emento para el servidor. Sin nombre no se envía. Agrupa radiobuttons
+readonly - valor value solo visible
+required - campo obligatorio
+minlength, maxlength, min y max
+type - apariencia del componente y tipo de dato que se introducirá
+value - valor por defecto del componente
+
+	Tipos de inputs
+Button 
+checkbox
+color
+date
+datetime-local
+email
+file
+hidden
+image - mismo comportamiento que el botón submit
+month
+number
+password
+radio
+range
+reset
+search
+submit
+tel
+text
+time
+url
+week
+select - desplegable de opciones
+	option - definir opciones
+	optgroup - definir grupo de opciones
+
+input - uso en JavaScript
+button - uso en formularios. mas flexible
+
+	Ejemplo de formulario
+<form action="resultats.html" method="post">
+	<label>nom:
+		<input type="text" id="nombre" name="nombre" placeholder="Nombre">
+	</label>
+
+	<label>
+		<input type="radio" id"idiomaCatala" name="idioma" value="catala" required >
+		Catala
+	</label>
+	<label>
+		<input type="radio" id="idiomaCastella" name="idioma' value="castella" required>
+		Castella	
+	</label>
+	
+	<button type="submit">Enviar</button>
+</form>
+
+label - identifica un campo de entrada de datos de formulario
+fieldset - agrupa un conjunto de campos de formulario
+legend - asigna un titulo a un fieldset
+
+<textarea cols row </textarea> - área para introducir texto. Columnas y fila por defecto
+
+			TAULES
+caption - titulo descriptivo encima de la tabla
+thead - conjunto de filas que forman el cabezal. Solo 1
+tbody - delimita el cuerpo de una tabla. Pueden haber diferentes tbody
+tfoot - delimita el conjunto de filas que forman la parte inferior
+
+tr - fila
+th - celda en el footer. Se muestran en negrita
+tf - representa una celda en el cuerpo
+colspan agrupar a la derecha. rowspan hacia abajo
+col- propiedades de una o grupos de columnas
+colgroup - crear grupos de columnas para aplicara tributos

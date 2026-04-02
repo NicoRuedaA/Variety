@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Ejercicio"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Ejercicio">
+				<Option output="F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Ejercicio.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ejercicio"/>
+					<CompileFile command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Ejercicio/fast">
+				<Option output="F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Ejercicio.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/MinGW/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ejercicio/fast"/>
+					<CompileFile command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW/mingw64/bin/mingw32-make.exe -f &quot;F:/Documentos/C++/ACME/Practica Final/Ejercicio/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Baralla.cpp">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Baralla.h">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Carta.cpp">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Carta.h">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Fitxa.cpp">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Fitxa.h">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Joc.cpp">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Joc.h">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Jugador.cpp">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Jugador.h">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Ma.cpp">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Ma.h">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/PilaBonificacions.cpp">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/PilaBonificacions.h">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/PilaCartes.cpp">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/PilaCartes.h">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Tauler.cpp">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/Tauler.h">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/main.cpp">
+			<Option target="Ejercicio"/>
+		</Unit>
+		<Unit filename="F:/Documentos/C++/ACME/Practica Final/Ejercicio/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

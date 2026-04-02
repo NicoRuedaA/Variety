@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen 4/12 pagina 1</title>
+    <link rel="stylesheet" href="CSS/estilos.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Juegos Online CIDE</h1>
+      <h2>Página donde encontrarás diferentes juegos clásicos</h2>
+    </header>
+
+    <aside>
+      <nav>
+        <a href="index.html">Inicio </a>&ThinSpace;
+        <a href="juegos.html"> Juegos</a>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
+        <h2>Rellena los siguientes campos para poder jugar</h2>
+
+        <form action="juegos.html" method="post">
+          <fieldset>
+            <label for="nick">
+              <p>
+                Nick:
+                <input type="text" name="nick" id="nick" required />
+              </p>
+            </label>
+            <label for="edad">
+              <p>
+                Edad:
+                <input type="number" min="18" required />
+              </p>
+            </label>
+
+            <label for="eleccion">
+              <p>
+                Juego:
+                <select id="eleccion" name="eleccion" required>
+                  <optgroup label="Juegos">
+                    <option value="1">Buscaminas</option>
+                    <option value="2">Memory</option>
+                  </optgroup>
+                </select>
+              </p>
+            </label>
+
+            <label for="eleccion2">
+              <p>
+                Nivel:
+                <select id="eleccion2" name="eleccion" required>
+                  <optgroup label="Selector de nivel">
+                    <option value="1">Fácil</option>
+                    <option value="2">Intermedio</option>
+                    <option value="3">Díficil</option>
+                  </optgroup>
+                </select>
+              </p>
+            </label>
+
+            <label>
+              <button type="submit">Jugar</button>
+            </label>
+          </fieldset>
+        </form>
+      </section>
+
+      <section>
+        <details>
+          <summary><strong>Más información</strong></summary>
+          <p>
+            Si quieres obtener más información sobre los juegos, revista este
+            video
+          </p>
+
+          <iframe src="https://www.youtube.com/embed/jRgtwnF9fgk"></iframe>
+        </details>
+      </section>
+    </main>
+    <footer>&copy 2025 Juegos Online CIDE</footer>
+  </body>
+</html>

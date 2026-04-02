@@ -1,0 +1,56 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Baralla.h
+Carta.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Carta.h
+
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Carta.h
+iostream
+-
+
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Fitxa.h
+iostream
+-
+
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Joc.cpp
+Joc.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Joc.h
+
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Joc.h
+Baralla.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Baralla.h
+Jugador.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Jugador.h
+PilaBonificacions.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/PilaBonificacions.h
+Tauler.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Tauler.h
+
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Jugador.h
+PilaCartes.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/PilaCartes.h
+Ma.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Ma.h
+
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Ma.h
+Carta.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Carta.h
+
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/PilaBonificacions.h
+Fitxa.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Fitxa.h
+
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/PilaCartes.h
+Carta.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Carta.h
+
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Tauler.h
+Carta.h
+F:/Documentos/C++/ACME/Practica Final/Ejercicio/Carta.h
+

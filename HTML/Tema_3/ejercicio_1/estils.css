@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Rubik";
+  src: url(fonts/Rubik/static/Rubik-Regular.ttf);
+}
+
+* {
+  background-color: #f4daf5;
+}
+
+h2,
+h1 {
+  font-family: "Rubik";
+  text-align: center;
+}
+
+.colorVerd {
+  color: green;
+}
+
+#bordeImg {
+  border: 3px solid rgb(110, 19, 83); /* grosor, estilo y color */
+  border-radius: 10px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
