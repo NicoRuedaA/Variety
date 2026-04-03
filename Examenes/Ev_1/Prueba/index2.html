@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" />
+    <title>Examen</title>
+    <link rel="stylesheet" href="css/style2.css" />
+  </head>
+  <body>
+    <header><h1>aqui va el header</h1></header>
+
+    <aside>Aqui va el aside</aside>
+
+    <main>
+      <p>
+        <img
+          src="https://m.media-amazon.com/images/I/813kqvYoRfL.png"
+          height="100px"
+        />
+      </p>
+      <a> texto <strong>sin </strong> <em>formato</em></a>
+      <section>
+        <h2>titulo del section 1</h2>
+
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" autofocus /><br /><br />
+
+        section 1
+        <article>
+          article 1
+          <details>
+            <summary>titulo details</summary>
+            <p>contenido details</p>
+          </details>
+        </article>
+        <article>
+          article 2
+          <iframe
+            src="https://www.youtube.com/watch?v=VZzSBv6tXMw"
+            width="560"
+            height="315"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </article>
+      </section>
+      <section>
+        <h2>titulo del section 2</h2>
+        <form action="pagina2.html" method="post">
+          <fieldset>
+            <legend>titulo fieldset 1</legend>
+
+            <label for="miDesplegable">
+              Selecciona una opción:
+              <select name="desplegable" id="miDesplegable">
+                <optgroup label="grupo1">
+                  <option value="1">Opción 1</option>
+                  <option value="2">Opción 2</option>
+                </optgroup>
+                <optgroup label="grupo1">
+                  <option value="2">Opción 2</option>
+                </optgroup>
+              </select>
+            </label>
+
+            <label>
+              <p><meter value="10" min="1" max="10"></meter></p>
+            </label>
+
+            <label>
+              <p><progress value="3" max="5" min="1"></progress></p>
+            </label>
+
+            <label>
+              <p><input type="range" value="1" min="0" max="10" /></p>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>titulo fieldset 2</legend>
+            <label for="buton1">
+              <input type="button" id="buton1" value="boton"></input>
+            </label>
+
+            <label for="buton1">
+              <button id="buton1" value="boton"></button>
+            </label>
+          </fieldset>
+        </form>
+      </section>
+
+      <section>
+        <h2>titulo del section 3</h2>
+        <table>
+          <caption>
+            titulo tabla
+          </caption>
+          <thead>
+            <tr>
+              <th>header 1</th>
+              <th>header 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>body 1</td>
+              <td>body 2</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>footer de la tabla 1</td>
+              <td>footer de la tabla 2</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </main>
+
+    <footer><small>Texto footer</small></footer>
+  </body>
+</html>

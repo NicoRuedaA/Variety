@@ -1,0 +1,392 @@
+body {
+  background: transparent;
+}
+
+.box {
+  width: 1000px;
+  height: 400px;
+  margin: auto;
+}
+
+.main-body {
+  width: 80%;
+  height: 81.25%;
+  margin: auto;
+  margin-top: 15%;
+  margin-bottom: 10%;
+  background: transparent;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  border-radius: 60px;
+}
+
+.screen-body {
+  background: #0d0d0d;
+  border-top: 10px solid #5d5d5d;
+  /* Tu fondo */
+
+  /* El radio del círculo invertido */
+  --r: 8px;
+
+  mask: radial-gradient(var(--r) at 0 0, #0000 98%, #000) 0 0,
+    radial-gradient(var(--r) at 100% 0, #0000 98%, #000) 100% 0,
+    radial-gradient(var(--r) at 0 0, #0000 0, #000) 0 100%,
+    radial-gradient(var(--r) at 0 0, #0000 0, #000) 100% 100%;
+
+  mask-size: 53% 53%;
+  mask-repeat: no-repeat;
+
+  border-radius: 0 0 10px 10px;
+}
+
+.screen {
+  position: relative;
+  top: 5%;
+  left: 2.5%;
+  width: 95%;
+  height: 90%;
+  background: #d2d2d2;
+  background-image: url("/img/background.jpg");
+  background-size: cover;
+  background-position: center; /* Recomendado para centrar a Mario */
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+
+.logo-left {
+  position: absolute;
+  top: 15%;
+  left: 33%;
+  width: 15%;
+  height: 70%;
+  background: white;
+  border-radius: 45px 0 0 45px;
+}
+
+.inside-left {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  height: 90%;
+  width: 80%;
+  background: #100406;
+  border-radius: 40px 0 0 40px;
+}
+
+.circle-left {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  height: 15%;
+  width: 40%;
+  background: white;
+  border-radius: 50%;
+}
+
+.logo-right {
+  position: absolute;
+  top: 15%;
+  right: 33%;
+  width: 15%;
+  height: 70%;
+  background: white;
+  border-radius: 0 45px 45px 0;
+}
+
+.circle-right {
+  position: absolute;
+  bottom: 30%;
+  left: 30%;
+  height: 15%;
+  width: 40%;
+  background: #d10019;
+  border-radius: 50%;
+}
+
+.joy-con-left {
+  position: relative;
+  background: #88e5a7;
+  border-radius: 70px 0 0 70px;
+
+  /* Borde solo arriba */
+  border-top: 10px solid #bbeecc;
+
+  /* Borde solo a la izquierda */
+  border-left: 7px solid #bbeecc;
+}
+
+/* 1. CONFIGURACIÓN COMPARTIDA (Posición y Tamaño) */
+.joystick-left,
+.joystick-left-bottom {
+  position: absolute;
+  top: 15%; /* La posición vertical que pediste */
+  left: 25%; /* La posición horizontal que pediste */
+  width: 50%;
+  height: 17%;
+  border-radius: 100%;
+}
+
+/* 2. CAPA INFERIOR (Estática - El hueco) */
+.joystick-left-bottom {
+  background: #484848; /* Fondo negro para dar profundidad */
+  z-index: 1;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* 3. CAPA SUPERIOR (Móvil - La palanca) */
+.joystick-left {
+  background: #1a1a1a; /* Color principal */
+  z-index: 2;
+
+  /* IMPORTANTE: Para que el movimiento WASD sea fluido */
+  transition: transform 0.1s linear;
+
+  /* Sombra para despegarlo del fondo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.minus-sign {
+  position: absolute;
+  top: 5%;
+  left: 70%;
+  width: 20%;
+  height: 2%;
+  border-radius: 3px;
+  background: #1a1a1a;
+}
+
+.d-pad-left-1,
+.d-pad-left-2,
+.d-pad-left-3,
+.d-pad-left-4 {
+  position: absolute;
+  border-radius: 100%;
+  background: #1a1a1a;
+}
+
+.d-pad-left-1 {
+  top: 55%;
+  left: 38.5%;
+  width: 23%;
+  height: 8%;
+}
+
+.d-pad-left-2 {
+  top: 70%;
+  left: 38.5%;
+  width: 23%;
+  height: 8%;
+}
+
+.d-pad-left-3 {
+  top: 62.5%;
+  left: 18%;
+  width: 23%;
+  height: 8%;
+}
+
+.d-pad-left-4 {
+  top: 62.5%;
+  right: 18%;
+  width: 23%;
+  height: 8%;
+}
+
+.small-square {
+  position: absolute;
+  top: 85%;
+  right: 10%;
+  width: 23%;
+  height: 8%;
+  border-radius: 5px;
+  background: #1a1a1a;
+}
+
+.joy-con-right {
+  position: relative;
+  background: #e681d2;
+  border-radius: 0 70px 70px 0;
+  border-top: 10px solid #eea2de;
+
+  /* Borde solo a la izquierda */
+  border-right: 7px solid #eea2de;
+}
+
+.joystick-right,
+.joystick-right-bottom {
+  position: absolute;
+  bottom: 20%;
+  left: 25%;
+  width: 50%;
+  height: 17%;
+  border-radius: 100%; /* Crea el óvalo */
+}
+
+.joystick-right-bottom {
+  /* Un poco más oscuro que el joystick para dar profundidad */
+  background: #484848;
+  z-index: 1; /* Se queda al fondo */
+
+  /* Sombra interna opcional: hace que parezca hundido */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* 3. CAPA SUPERIOR (Móvil - Tu diseño original) */
+.joystick-right {
+  background: #1a1a1a; /* El color que pediste */
+  z-index: 2; /* Se queda encima */
+
+  /* IMPORTANTE: Necesario para que el JS se mueva suave */
+  transition: transform 0.1s linear;
+
+  /* Sombra externa opcional: para separarlo visualmente del fondo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.plus-sign-1 {
+  position: absolute;
+  top: 2.5%;
+  right: 77%;
+  width: 5%;
+  height: 8%;
+  border-radius: 3px;
+  background: #1a1a1a;
+}
+
+.plus-sign-2 {
+  position: absolute;
+  top: 5%;
+  right: 70%;
+  width: 20%;
+  height: 2%;
+  border-radius: 3px;
+  background: #1a1a1a;
+}
+
+.d-pad-right-1,
+.d-pad-right-2,
+.d-pad-right-3,
+.d-pad-right-4 {
+  position: absolute;
+  border-radius: 100%;
+  background: #1a1a1a;
+}
+
+.d-pad-right-1 {
+  bottom: 55%;
+  left: 38.5%;
+  width: 23%;
+  height: 8%;
+}
+
+.d-pad-right-2 {
+  bottom: 70%;
+  left: 38.5%;
+  width: 23%;
+  height: 8%;
+}
+
+.d-pad-right-3 {
+  bottom: 62.5%;
+  left: 18%;
+  width: 23%;
+  height: 8%;
+}
+
+.d-pad-right-4 {
+  bottom: 62.5%;
+  right: 18%;
+  width: 23%;
+  height: 8%;
+}
+
+.small-circle {
+  position: absolute;
+  top: 85%;
+  left: 10%;
+  width: 23%;
+  height: 8%;
+  border-radius: 100%;
+  background: #1a1a1a;
+}
+
+@media all and (max-width: 900px) {
+  .box {
+    width: 700px;
+    height: 280px;
+  }
+
+  .joy-con-left {
+    border-radius: 49px 0 0 49px;
+  }
+
+  .joy-con-right {
+    border-radius: 0 49px 49px 0;
+  }
+
+  .logo-left {
+    border-radius: 31.5px 0 0 31.5px;
+  }
+
+  .inside-left {
+    border-radius: 28px 0 0 28px;
+  }
+
+  .logo-right {
+    border-radius: 0 31.5px 31.5px 0;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .box {
+    width: 500px;
+    height: 200px;
+  }
+
+  .joy-con-left {
+    border-radius: 35px 0 0 35px;
+  }
+
+  .joy-con-right {
+    border-radius: 0 35px 35px 0;
+  }
+
+  .logo-left {
+    border-radius: 22.5px 0 0 22.5px;
+  }
+
+  .inside-left {
+    border-radius: 20px 0 0 20px;
+  }
+
+  .logo-right {
+    border-radius: 0 22.5px 22.5px 0;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .box {
+    width: 250px;
+    height: 100px;
+  }
+
+  .joy-con-left {
+    border-radius: 17.5px 0 0 17.5px;
+  }
+
+  .joy-con-right {
+    border-radius: 0 17.5px 17.5px 0;
+  }
+
+  .logo-left {
+    border-radius: 11.25px 0 0 11.25px;
+  }
+
+  .inside-left {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .logo-right {
+    border-radius: 0 11.25px 11.25px 0;
+  }
+}
