@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "type": "java",
+        "name": "Main",
+        "request": "launch",
+        "mainClass": "es.cide.programacio.Main",
+        "projectName": "entrega4"
+    },
+    {
+        "name": "Attach to Process",
+        "type": "node",
+        "protocol": "inspector",
+        "request": "attach",
+        "stopOnEntry": false,
+        "port": 5858,
+        "localRoot": "${workspaceRoot}",
+        "remoteRoot": "/somepath/myprojectroot",
+        "sourceMaps": true
+    }
+]
+}
